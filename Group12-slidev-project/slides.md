@@ -135,5 +135,22 @@ function App() {
 
 ```
 
+---
+
+# Combining Components
+
+```jsx
+function App() {
+  return (
+    <div>
+      <Welcome />
+      <GreetUser name="John" />
+      <GreetUser name="Jane" />
+      <StyledMessage />
+    </div>
+  );
+}
+
+```
 
 
