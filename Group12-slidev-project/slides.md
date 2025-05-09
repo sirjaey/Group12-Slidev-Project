@@ -1687,3 +1687,124 @@ console.log("Original Leader:", originalLeader);
 console.log("Cloned Leader:", clonedLeader);
 // Output: Cloned Leader: { name: 'Ngozi', age: 45, address: { street: 'Awka Road', city: 'Asaba' } }
 ```
+
+----
+    <h1>API- APPLICATION PROGRAMMING INTERFACE.</h1>
+<p>
+    Breaking it down,
+<br>
+    Application is any software that has a specific functionality. 
+    <br>
+    Interface is a protocol that dictates how two application talks to each other using requests and responses.
+    <br>
+    So put together, it is a way by which different systems or applications communicate with each other, thereby enabling them to share data and functionalities seamlessly. An API call is the act of making this request. 
+    </p>
+
+
+<h1>Why do we need APIs?</h1>
+
+A non-technical analogy, 
+<br>
+Imagine making a reservation for four people at a restaurant. You will have to make a call to customer rep of the restaurant to make enquiries about availability, who in return would have to ask you to hold on for some seconds to confirm and get back to you with either a yes or no response. 
+<br>
+The CS here is an API. It saves the client the stress of having to go through each departments to check for their availability. 
+
+<p>
+In technical terms, using the daily weather update on your mobile device as an example
+</p>
+
+<li>
+    <ul>Your mobile app sends a request to a server (via the API).</ul>
+    <ul>The server processes the request. </ul>
+    <ul>The API returns a response, usually in a format like JSON.</ul>
+</li>
+Example:
+
+
+Let’s say you’re building a weather app:
+
+	<p>Your app sends a request like:</p>	
+
+    <div>
+"GET https://api.weather.com/current?city=Abuja"
+
+<p>	The weather API replies with:</p>
+
+{
+
+  "city": "Abuja",
+  "temperature": "15°C",
+  "condition": "Cloudy"
+
+}
+</div>
+
+Your app then uses that data to display the weather.
+
+<br>
+
+<p>Making API calls in JavaScript is typically done using either the fetch() API or XMLHttpRequest, though fetch() is more modern and widely preferred.
+</p>
+
+
+<h3>Using fetch() — Basic GET Request</h3>
+
+
+<div>
+    fetch('url')
+
+    .then(response => response.json())
+  
+    .then(data => {
+  
+      console.log(data);
+  
+    })
+  
+    .catch(error => {
+  
+      console.error('Error:', error);
+  
+    });
+    
+</div>
+
+
+<p>API calls typically include:</p>
+HTTP method: Specifies the type of request (e.g., GET, POST, PUT, DELETE). <br> 
+Headers: Provide additional information about the request (e.g., authentication tokens, content type). <br> 
+Payload: The data sent in the request (e.g., login credentials, booking details). 
+
+
+
+<h1>FORM DATA.</h1>
+FormData is a built-in JavaScript object that makes it easy to construct a set of key/value pairs representing form fields and their values. It's particularly useful for:
+
+<li>
+    <ul>Sending form data through fetch API</ul>
+    <ul>Handling file uploads</ul>
+    <ul>Creating form data programmatically</ul>
+</li>
+
+
+<h3>Basic Usage</h3>
+
+<div>
+const form = document.querySelector('form');
+const formData = new FormData(form);
+
+fetch('/submit', {
+  method: 'POST',
+  body: formData
+});
+</div>
+
+<h3>Key Features:</h3>
+<li>
+
+<ul>Easy Form Capture: Automatically sets the Content-Type to multipart/form-data.</ul>
+<ul>File Handling: Supports file uploads and Blob data</ul>
+<ul>Multipart Encoding: Automatically encoded as multipart/form-data</ul>
+<ul>Flexible Modification: Can add, modify, or delete fields after creation</ul>
+
+</li>
